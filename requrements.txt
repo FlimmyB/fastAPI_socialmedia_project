@@ -2,3 +2,5 @@ fastAPI
 fastAPI-users
 sqlachemy
 pydantic
+asyncpg
+uvicorn
