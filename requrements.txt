@@ -1,0 +1,4 @@
+fastAPI
+fastAPI-users
+sqlachemy
+pydantic
