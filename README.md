@@ -11,6 +11,6 @@ This app lets you register and authentificate. You can create posts, edit or del
 4) run `alembic revision --autogenerate -m "Initial migration" `
 5) run `alembic upgrade head`
 6) Enter the src directory by running `cd src`
-7) Now you can start the app by running `uvicorn run main.py:app --reload`
+7) Now you can start the app by running `uvicorn run main:app --reload`
 8) Succes! Your fastAPI server is up and runnig!
 
