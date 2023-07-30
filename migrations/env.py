@@ -7,10 +7,13 @@ from alembic import context
 from src.config import DB_USER, DB_PORT, DB_PASS, DB_HOST, DB_NAME, SECRET
 from src.auth.tables import metadata as user_metadata
 from src.post.tables import metadata as post_metadata
+from src.like.tables import metadata as like_metadata
 import os
 import sys
 
 sys.path.append(os.path.join(sys.path[0], 'src'))
+sys.path.append(os.path.join(sys.path[0], 'src/auth'))
+
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -31,7 +34,7 @@ config.set_section_option(section, "SECRET", SECRET)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = [user_metadata, post_metadata]
+target_metadata = [user_metadata, post_metadata, like_metadata]
 
 
 # other values from the config, defined by the needs of env.py,
