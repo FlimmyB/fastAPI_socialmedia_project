@@ -2,8 +2,8 @@ from sqlalchemy import Table, MetaData, Column, Integer, ForeignKey, String, Boo
 
 from auth.tables import user
 from post.tables import post
+from database_init import metadata
 
-metadata = MetaData()
 like = Table(
     "like",
     metadata,

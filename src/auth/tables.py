@@ -1,8 +1,9 @@
 import uuid
 
 from sqlalchemy import Integer, String, Table, Column, Boolean, MetaData
+from database_init import metadata
 
-metadata = MetaData()
+
 user = Table(
     "user",
     metadata,

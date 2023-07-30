@@ -2,8 +2,7 @@ import uuid
 
 from sqlalchemy import Table, Integer, String, ForeignKey, Column, MetaData
 from auth.tables import user
-
-metadata = MetaData()
+from database_init import metadata
 
 post = Table(
     "post",
