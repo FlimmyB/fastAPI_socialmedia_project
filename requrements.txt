@@ -1,5 +1,6 @@
 fastAPI
 fastAPI-users
+python-dotenv
 sqlachemy
 pydantic
 asyncpg

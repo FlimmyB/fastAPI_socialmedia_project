@@ -14,10 +14,3 @@ post = Table(
     Column("context", String),
     Column("creator", ForeignKey(user.c.email))
 )
-like = Table(
-    "like",
-    metadata,
-    Column("id", Integer, primary_key=True),
-    Column("from", String, ForeignKey(user.c.email)),
-    Column("to", String, ForeignKey(post.c.uuid)),
-)
