@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
-
 from auth.base_config import fastapi_user, auth_backend
 from auth.user_schema import UserCreate, UserRead
 from post.router import router as post_router
+from like.router import router as like_router
 
 app = FastAPI(title="FastAPI social app")
 
@@ -18,4 +18,4 @@ app.include_router(
 )
 
 app.include_router(post_router)
-
+app.include_router(like_router)
