@@ -1,9 +1,9 @@
 from fastapi_users import FastAPIUsers
 from fastapi_users.authentication import JWTStrategy, CookieTransport, AuthenticationBackend
 
-from auth.models import User
-from auth.user_manager import get_user_manager
-from config import SECRET
+from src.auth.models import User
+from src.auth.user_manager import get_user_manager
+from src.config import SECRET
 
 
 def get_jwt_strategy() -> JWTStrategy:

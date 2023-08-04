@@ -1,8 +1,8 @@
 import uuid
 
 from sqlalchemy import Table, Integer, String, ForeignKey, Column, MetaData
-from auth.tables import user
-from database_init import metadata
+from src.auth.tables import user
+from src.database_init import metadata
 
 post = Table(
     "post",
@@ -13,3 +13,5 @@ post = Table(
     Column("context", String),
     Column("creator", ForeignKey(user.c.email))
 )
+
+

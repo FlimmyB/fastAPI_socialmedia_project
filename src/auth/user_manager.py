@@ -2,9 +2,9 @@ from typing import Optional
 from fastapi import Depends, Request
 from fastapi_users import BaseUserManager, IntegerIDMixin
 from fastapi_users.db import SQLAlchemyUserDatabase
-from auth.users_db import get_user_db
-from auth.models import User
-from config import SECRET
+from src.auth.users_db import get_user_db
+from src.auth.models import User
+from src.config import SECRET
 
 
 class UserManager(IntegerIDMixin, BaseUserManager[User, int]):

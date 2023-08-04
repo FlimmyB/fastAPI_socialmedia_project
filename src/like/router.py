@@ -2,12 +2,12 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import insert, delete, select, update
 from sqlalchemy.event import remove
 from sqlalchemy.ext.asyncio import AsyncSession
-from post.tables import post
-from auth.base_config import fastapi_user
-from auth.models import User
-from like.schemas import LikeCreate, LikeRemove, LikeChange
-from like.tables import like
-from database_init import get_async_session
+from src.post.tables import post
+from src.auth.base_config import fastapi_user
+from src.auth.models import User
+from src.like.schemas import LikeCreate, LikeRemove, LikeChange
+from src.like.tables import like
+from src.database_init import get_async_session
 
 router = APIRouter(
     prefix="/like",

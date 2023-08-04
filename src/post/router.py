@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import insert, select, update, delete
 from sqlalchemy.ext.asyncio import AsyncSession
-from auth.base_config import fastapi_user
-from auth.models import User
-from database_init import get_async_session
-from post.schemas import PostCreate, PostEdit
-from post.tables import post
+from src.auth.base_config import fastapi_user
+from src.auth.models import User
+from src.database_init import get_async_session
+from src.post.schemas import PostCreate, PostEdit
+from src.post.tables import post
 
 router = APIRouter(
     prefix="/post",
@@ -60,3 +60,14 @@ async def delete_post(post_delete: PostEdit, curr_user: User = Depends(current_u
             "data": None,
             "details": "Can not delete others post"
         }
+
+
+@router.get("/see_posts")
+async def see_posts(page: int = 0, session: AsyncSession = Depends(get_async_session)):
+    stmt = select(post).where(post.c.id <= page + 10)
+    result = await session.execute(stmt)
+    return {
+        "status": "Success",
+        "data": result,
+        "details": f"Result for page№{page}"
+    }

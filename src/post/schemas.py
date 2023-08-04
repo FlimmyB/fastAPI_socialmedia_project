@@ -19,3 +19,4 @@ class PostEdit(BaseModel):
     context: str
     uuid: str
     creator: str = None
+

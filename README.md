@@ -1,7 +1,7 @@
 
 # fastAPI Social media app!
 ======================================================================================================================================
-This app lets you register and authentificate. You can create posts, edit or delete them. This app is a test fastAPI social media app.
+This app lets you register and authenticate. You can create posts, edit or delete them. This app is a test fastAPI social media app.
 
 # Installation:
 
@@ -10,7 +10,6 @@ This app lets you register and authentificate. You can create posts, edit or del
 3) run `alembic init`
 4) run `alembic revision --autogenerate -m "Initial migration" `
 5) run `alembic upgrade head`
-6) Enter the src directory by running `cd src`
-7) Now you can start the app by running `uvicorn run main:app --reload`
-8) Succes! Your fastAPI server is up and runnig!
+6) Now you can start the app by running `uvicorn run main:app --reload`
+7) Success! Your fastAPI server is up and running!
 
