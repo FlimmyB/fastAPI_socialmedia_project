@@ -63,8 +63,8 @@ async def delete_post(post_delete: PostEdit, curr_user: User = Depends(current_u
 
 
 @router.get("/see_posts")
-async def see_posts(page: int = 0, session: AsyncSession = Depends(get_async_session)):
-    stmt = select(post).where(post.c.id <= page + 10)
+async def see_posts(page: int = 1, session: AsyncSession = Depends(get_async_session)):
+    stmt = select(post).where(page <= post.c.id <= page + 10)
     result = await session.execute(stmt)
     return {
         "status": "Success",

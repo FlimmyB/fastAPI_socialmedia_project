@@ -18,7 +18,6 @@ auth_backend = AuthenticationBackend(
     get_strategy=get_jwt_strategy,
 )
 
-
 fastapi_user = FastAPIUsers[User, int](
     get_user_manager,
     [auth_backend],
